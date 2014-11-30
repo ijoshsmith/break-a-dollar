@@ -1,0 +1,41 @@
+Algorithm Overview
+
+Here is the logic for figuring out how many ways there are to create 25 cents using
+only quarters, dimes, nickels, and pennies. The logic to solve this is the same logic
+needed to figure out how many ways there are to break a dollar.
+
+Here is a quick reference for people unfamiliar with American coins.
+Q = Quarter (25 cents)
+D = Dime    (10 cents)
+N = Nickel  ( 5 cents)
+P = Penny   ( 1 cent)
+
+This table lists every way to create 25 cents.
+Q   D   N   P
+--------------
+0   0   0   25
+0   0   1   20
+0   0   2   15
+0   0   3   10
+0   0   4   05
+0   0   5   00
+0   1   0   15
+0   1   1   10
+0   1   2   05
+0   1   3   00
+0   2   0   05
+0   2   1   00
+1   0   0   00
+
+This pseudo-code outlines the algorithm.
+fullAmount = 25
+loop Q from 0 to fullAmount/25:
+
+    remainingAmount = fullAmount - (25 * Q)
+    loop D from 0 to remainingAmount/10:
+
+        remainingAmount = remainingAmount - (10 * D)
+        loop N from 0 to remainingAmount/5:
+
+            remainingAmount = remainingAmount - (5 * N)
+                // there's only one way to create a value using pennies
