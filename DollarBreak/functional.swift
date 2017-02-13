@@ -8,18 +8,16 @@
 
 import Foundation
 
-class Functional
-{
-    class func countWaysToBreakAmount(amount: Int, usingCoins coins: Slice<Coin>) -> Int
-    {
+class Functional {
+    static func countWaysToBreakAmount(_ amount: Int, usingCoins coins: [Coin]) -> Int {
         let (coin, smallerCoins) = (coins[0], coins[1..<coins.count])
-        if (coin == .Penny) {
+        if coin == Coin.penny {
             return 1
         }
         let coinCounts = [Int](0...amount/coin.rawValue)
         return coinCounts.reduce(0) { (sum, coinCount) in
             let remainingAmount = amount - (coin.rawValue * coinCount)
-            return sum + self.countWaysToBreakAmount(remainingAmount, usingCoins: smallerCoins)
+            return sum + self.countWaysToBreakAmount(remainingAmount, usingCoins: Array(smallerCoins))
         }
     }
 }

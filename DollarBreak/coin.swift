@@ -10,22 +10,22 @@ import Foundation
 
 enum Coin: Int
 {
-    case SilverDollar = 100
-    case HalfDollar = 50
-    case Quarter = 25
-    case Dime = 10
-    case Nickel = 5
-    case Penny = 1
+    case silverDollar = 100
+    case halfDollar = 50
+    case quarter = 25
+    case dime = 10
+    case nickel = 5
+    case penny = 1
     
     static func coinsInDescendingOrder() -> [Coin]
     {
         return [
-            Coin.SilverDollar,
-            Coin.HalfDollar,
-            Coin.Quarter,
-            Coin.Dime,
-            Coin.Nickel,
-            Coin.Penny
+            Coin.silverDollar,
+            Coin.halfDollar,
+            Coin.quarter,
+            Coin.dime,
+            Coin.nickel,
+            Coin.penny
         ]
     }
 }

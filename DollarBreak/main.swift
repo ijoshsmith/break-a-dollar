@@ -12,7 +12,7 @@ let oneDollar = 100
 let allCoins = Coin.coinsInDescendingOrder()
 
 let count1 = Imperative.countWaysToBreakAmount(oneDollar, usingCoins: allCoins)
-println("(Imperative) There are \(count1) ways to break a dollar.")
+print("(Imperative) There are \(count1) ways to break a dollar.")
 
-let count2 = Functional.countWaysToBreakAmount(oneDollar, usingCoins: Slice<Coin>(allCoins))
-println("(Functional) There are \(count2) ways to break a dollar.")
+let count2 = Functional.countWaysToBreakAmount(oneDollar, usingCoins: [Coin](allCoins))
+print("(Functional) There are \(count2) ways to break a dollar.")

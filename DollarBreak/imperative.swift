@@ -8,12 +8,10 @@
 
 import Foundation
 
-class Imperative
-{
-    class func countWaysToBreakAmount(amount: Int, usingCoins coins: [Coin]) -> Int
-    {
+class Imperative {
+    static func countWaysToBreakAmount(_ amount: Int, usingCoins coins: [Coin]) -> Int {
         let coin = coins[0]
-        if (coin == .Penny) {
+        if coin == .penny {
             return 1
         }
         
